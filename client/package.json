@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "nodemon -L assets/index.js",
-    "start": "node assets",
+    "start": "node client",
     "setup-db": "node ./database/setup.js"
   }
 }
