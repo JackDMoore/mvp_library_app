@@ -25,7 +25,7 @@ async function show (req, res) {
         const post = await Post.getOneById(id);
         res.json(post);
     } catch (err) {
-        res.status(404).json({"error": err.message})
+        res.status(404).json({"error": "This book does not exist"})
     }
 };
 

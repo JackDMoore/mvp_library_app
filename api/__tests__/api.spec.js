@@ -19,16 +19,23 @@ describe("api server", () => {
     request(api).get("/").expect(200, done);
   });
 
-  // Not sure we need the test below
   test("responds to invalid method request with 405", (done) => {
     request(api)
       .post("/")
       .expect(405, done);
   });
 
+//not currently working
   // test('responds to delete /posts/:id with status 204', (done) => {
   //   request(api)
   //     .delete('/posts/1')
   //     .expect(204, done)
   // })
+
+  test('responds to unknown book id with a 404', (done) => {
+    request(api)
+    .get('/posts/66')
+    .expect(404)
+    .expect({error: "This book does not exist"}, done)
+  })
 });
