@@ -38,4 +38,21 @@ describe("api server", () => {
     .expect(404)
     .expect({error: "This book does not exist"}, done)
   })
+
+  // test('responds to posts /posts with status 201', (done) => {
+  //   const testData = {
+  //     title: "The Shadow of The Wind",
+  //     content: "The Shadow of The Wind",
+  //     book_year: 2001,
+  //     author:"Carlos Ruiz Zafón",
+  //     genre: "Mystery",
+  //     on_loan: true
+  //   }
+  //   request(api)
+  //   .post('/posts')
+  //   .send(testData)
+  //   .set('Accept','application/json')
+  //   .expect(201)
+  //   .expect({testData}, done)
+  // })
 });

@@ -15,7 +15,7 @@ async function create (req, res) {
         const result = await Post.create(data);
         res.status(201).send(result);
     } catch (err) {
-        res.status(400).json({"error": err.message})
+        res.status(400).json({"error": "Unable to create a new book"})
     }
 };
 
