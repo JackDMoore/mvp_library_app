@@ -11,13 +11,15 @@ describe("api server", () => {
   });
 
   afterAll((done) => {
-    console.log('Stopping the test server')
-    api.close(done)
-  })
+    console.log("Stopping the test server");
+    api.close(done);
+  });
 
-  test('it responds to get / with status 200', (done) => {
-    request(api)
-        .get('/')
-        .expect(200, done)
-    })
+  test("it responds to get / with status 200", (done) => {
+    request(api).get("/").expect(200, done);
+  });
+
+//   test("responds to invalid method request with 405", (done) => {
+//     request(api).get(api).post("/").expect(201, done);
+//   });
 });
