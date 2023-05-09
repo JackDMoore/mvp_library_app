@@ -28,7 +28,7 @@ class Post {
     static async getOneById(id) {
         const response = await db.query("SELECT * FROM post WHERE post_id = $1", [id]);
         if (response.rows.length != 1) {
-            throw new Error("Unable to locate post.")
+            throw new Error("Unable to locate book.")
         }
         return new Post(response.rows[0]);
     }
@@ -44,6 +44,9 @@ class Post {
 
     async destroy() {
         let response = await db.query("DELETE FROM post WHERE post_id = $1 RETURNING *;", [this.id]);
+        if (response.rows.length != 1) {
+            throw new Error("Unable to delete book.")
+        }
         return new Post(response.rows[0]);
     }
 
