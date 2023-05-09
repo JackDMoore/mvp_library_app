@@ -13,8 +13,8 @@ api.use(logRoutes);
 
 api.get("/", (req, res) => {
     res.json({
-        name: "Discretion",
-        description: "Send and receive private messages."
+        name: "Florin County Council Library",
+        description: "App for libary workers to show, update and delete books for the community. The community can also browse the libary and find out opening times "
     })
 })
 

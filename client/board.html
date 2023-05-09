@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <link rel="shortcut icon" href="./assets/book.ico">
     <link rel="stylesheet" href="./assets/default.css">
     <script src="./assets/board.js" defer></script>
-    <title>Discretion</title>
+    <title>Florin Library</title>
 </head>
 <body>
     <nav>
         <a href="./index.html">Log out</a>
     </nav>
     <header>
-        <h1>Discretion</h1>
-        <em>Not everything needs to be public.</em>
+        <h1>Florin County Council Library</h1>
+        <em>Add, edit and delete books:</em>
     </header>
     <hr />
     <main>
@@ -29,10 +29,29 @@
                 <input type="text" id="title" name="title" required>
             </fieldset>
             <fieldset>
-                <label for="title">Content:</label>
+                <label for="title">Author:</label>
+                <input type="text" id="author" name="author" required>
+            </fieldset>
+            <fieldset>
+                <label for="title">Release date:</label>
+                <input type="text" id="relase-date" name="relase-date" required>
+            </fieldset>
+            <fieldset>
+                <label for="title">Category</label>
+                <input type="text" id="category" name="category" required>
+            </fieldset>
+            <fieldset>
+                <label for="title">About:</label>
                 <textarea id="content" name="content" required></textarea>
             </fieldset>
-            <input type="submit" value="Post">
+            <fieldset>
+                <legend>Is the book on loan?</legend>
+                <input type="radio" id="on-loan-yes" name="on_loan" value="true">
+                <label for="on-loan-yes">Yes</label>
+                <input type="radio" id="on-loan-no" name="on_loan" value="false" checked>
+                <label for="on-loan-no">No</label>
+              </fieldset>
+            <input type="submit" value="Add to Library">
         </form>
     </main>
 </body>
