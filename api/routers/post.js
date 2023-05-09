@@ -5,7 +5,7 @@ const postController = require('../controllers/post.js');
 
 const postRouter = Router();
 
-postRouter.get("/", authenticator, postController.index);
+postRouter.get("/", postController.index);
 postRouter.post("/", postController.create);
 postRouter.get("/:id", postController.show);
 postRouter.delete("/:id", postController.destroy);

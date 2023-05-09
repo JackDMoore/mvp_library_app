@@ -7,15 +7,15 @@
     <link rel="shortcut icon" href="./assets/favicon.ico">
     <link rel="stylesheet" href="./assets/default.css">
     <script src="./assets/board.js" defer></script>
-    <title>Discretion</title>
+    <title>Florin Library</title>
 </head>
 <body>
     <nav>
         <a href="./index.html">Log out</a>
     </nav>
     <header>
-        <h1>Discretion</h1>
-        <em>Not everything needs to be public.</em>
+        <h1>Florin County Council Library</h1>
+        <em>Add, edit and delete books:</em>
     </header>
     <hr />
     <main>
@@ -29,7 +29,15 @@
                 <input type="text" id="title" name="title" required>
             </fieldset>
             <fieldset>
-                <label for="title">Content:</label>
+                <label for="title">Author:</label>
+                <input type="text" id="author" name="author" required>
+            </fieldset>
+            <fieldset>
+                <label for="title">Release date:</label>
+                <input type="text" id="relase_date" name="relase_date" required>
+            </fieldset>
+            <fieldset>
+                <label for="title">About:</label>
                 <textarea id="content" name="content" required></textarea>
             </fieldset>
             <input type="submit" value="Post">
