@@ -19,7 +19,17 @@ describe("api server", () => {
     request(api).get("/").expect(200, done);
   });
 
-//   test("responds to invalid method request with 405", (done) => {
-//     request(api).get(api).post("/").expect(201, done);
-//   });
+  //Not sure we need the test below
+  // test("responds to invalid method request with 405", (done) => {
+  //   request(api)
+  //     .get(api)
+  //     .post("/")
+  //     .expect(405, done);
+  // });
+
+  // test('responds to delete /posts/:id with status 204', (done) => {
+  //   request(api)
+  //     .delete('/posts/1')
+  //     .expect(204, done)
+  // })
 });
