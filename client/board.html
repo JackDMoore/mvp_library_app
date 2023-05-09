@@ -34,13 +34,20 @@
             </fieldset>
             <fieldset>
                 <label for="title">Release date:</label>
-                <input type="text" id="relase_date" name="relase_date" required>
+                <input type="text" id="relase-date" name="relase-date" required>
             </fieldset>
             <fieldset>
                 <label for="title">About:</label>
                 <textarea id="content" name="content" required></textarea>
             </fieldset>
-            <input type="submit" value="Post">
+            <fieldset>
+                <legend>Is the book on loan?</legend>
+                <input type="radio" id="on-loan-yes" name="on_loan" value="true">
+                <label for="on-loan-yes">Yes</label>
+                <input type="radio" id="on-loan-no" name="on_loan" value="false" checked>
+                <label for="on-loan-no">No</label>
+              </fieldset>
+            <input type="submit" value="Add to Library">
         </form>
     </main>
 </body>
