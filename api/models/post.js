@@ -2,10 +2,14 @@ const db = require('../database/connect');
 
 class Post {
 
-    constructor({ post_id, title, content }) {
+    constructor({ post_id, title, content, book_year, author, genre, on_loan }) {
         this.id = post_id;
         this.title = title;
         this.content = content;
+        this.book_year = book_year
+        this.author = author;
+        this.genre = genre;
+        this.on_loan = on_loan;
     }
 
     static async getAll() {
@@ -22,9 +26,9 @@ class Post {
     }
 
     static async create(data) {
-        const { title, content } = data;
-        let response = await db.query("INSERT INTO post (title, content) VALUES ($1, $2) RETURNING post_id;",
-            [title, content]);
+        const { title, content, book_year, author, genre, on_loan } = data;
+        let response = await db.query("INSERT INTO post (title, content, book_year, author, genre, on_loan) VALUES ($1, $2, $3, $4, $5, $6) RETURNING post_id;",
+            [title, content, book_year, author, genre, on_loan]);
         const newId = response.rows[0].post_id;
         const newPost = await Post.getOneById(newId);
         return newPost;
