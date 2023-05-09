@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "nodemon -L index.js",
-    "start": "node index.js",
+    "start": "next start --port 3000",
     "setup-db": "node ./database/setup.js"
   }
 }
