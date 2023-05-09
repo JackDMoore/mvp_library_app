@@ -30,7 +30,7 @@ document.getElementById("post-form").addEventListener("submit", async (e) => {
         })
     }
 
-    const result = await fetch("http://https://mvp-library-app-backend1.onrender.com/posts", options);
+    const result = await fetch("https://mvp-library-app-backend1.onrender.com/posts", options);
 
     if (result.status == 201) {
         window.location.reload();
@@ -44,7 +44,7 @@ async function loadPosts () {
             'Authorization': localStorage.getItem("token")
         }
     }
-    const response = await fetch("http://https://mvp-library-app-backend1.onrender.com/posts", options);
+    const response = await fetch("https://mvp-library-app-backend1.onrender.com/posts", options);
 
     if (response.status == 200) {
         const posts = await response.json();
