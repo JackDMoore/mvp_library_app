@@ -37,3 +37,4 @@ INSERT INTO post (title, content, book_year, author, genre, on_loan) VALUES
 ('Jane Eyre', 'The novel follows the story of Jane, a seemingly plain and simple girl as she battles through lifes struggles.', 1847, 'Charlotte Bronte', 'Romance', FALSE),
 ('The Lion, the Witch and the Wardrobe', 'When the Pevensie children, Peter, Susan, Edmund, and Lucy are sent out of London during World War II, they have no idea of the magical journey they are beginning.' , 1950, 'C.S Lewis', 'Fantasy' ,FALSE),
 ('Lord of the Flies', 'Lord of the Flies tells the story of a group of young who find themselves alone on a deserted island.', 1954, 'William Golding', 'Dystopian', TRUE );
+ 
