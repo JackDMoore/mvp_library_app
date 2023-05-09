@@ -2,10 +2,22 @@ const db = require('../database/connect');
 
 class Post {
 
-    constructor({ post_id, title, content }) {
+    constructor({ 
+        post_id, 
+        title, 
+        content,
+        book_year,
+        author,
+        genre,
+        on_loan,
+    }) {
         this.id = post_id;
         this.title = title;
         this.content = content;
+        this.year = book_year;
+        this.author = author;
+        this.genre = genre;
+        this.on_loan = on_loan;
     }
 
     static async getAll() {
