@@ -15,7 +15,9 @@ describe("api server", () => {
     api.close(done)
   })
 
-  test('it responds to get / with status 200', () => {
-
-  })
+  test('it responds to get / with status 200', (done) => {
+    request(api)
+        .get('/')
+        .expect(200, done)
+    })
 });
