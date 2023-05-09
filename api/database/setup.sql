@@ -26,7 +26,7 @@ CREATE TABLE token (
 );
 
 CREATE TABLE books (
-    book_id INT GENERATED ALWAYS AS IDENTITY,
+    book_id INT NOT NULL,
     book_name VARCHAR(100) NOT NULL,
     content VARCHAR(5000) NOT NULL,
     book_year INT NOT NULL,
