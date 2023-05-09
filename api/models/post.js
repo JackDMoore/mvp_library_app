@@ -27,7 +27,7 @@ class Post {
 
     static async create(data) {
         const { title, content, book_year, author, genre, on_loan } = data;
-        let response = await db.query("INSERT INTO post (title, content, book_year, author, genre, on_loan) VALUES ($1, $2, $3, $4, $5, $6) RETURNING post_id;",
+        let response = await db.query("INSERT INTO post (title, content, book_year, author, genre, on_loan) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;",
             [title, content, book_year, author, genre, on_loan]);
         const newId = response.rows[0].post_id;
         const newPost = await Post.getOneById(newId);
@@ -39,9 +39,9 @@ class Post {
         let response = await db.query("UPDATE post SET (title, content, book_year, author, genre, on_loan) = ($1, $2, $3, $4, $5, $6) WHERE post_id = $7 RETURNING *;",
             [title, content, book_year, author, genre, on_loan, this.id]);
             if (response.rows.length != 1) {
-                throw new Error("Not able to update Pokemon")
+                throw new Error("Not able to update book")
               }
-              return new Pokemon(response.rows[0])
+              return new Post(response.rows[0])
             }
     
 
