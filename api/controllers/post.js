@@ -40,6 +40,25 @@ async function destroy (req, res) {
     }
 };
 
+async function update (req, res) {
+    try {
+            const id = parseInt(req.params.id);
+            const data = req.body;
+            const post = await Post.getOneById(id);
+            const result = await post.update(data);
+            res.status(200).json({
+                success: true,
+                book: result
+            })
+        } catch (err) {
+            res.status(404).json({
+                success: false,
+                message: "Unable to update book",
+                error: err,
+        })
+    }
+    };
+
 module.exports = {
-    index, create, show, destroy
+    index, create, show, destroy, update
 }

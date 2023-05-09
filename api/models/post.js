@@ -34,6 +34,17 @@ class Post {
         return newPost;
     }
 
+    async update(data) {
+        const { title, content, book_year, author, genre, on_loan } = data;
+        let response = await db.query("UPDATE post SET (title, content, book_year, author, genre, on_loan) = ($1, $2, $3, $4, $5, $6) WHERE post_id = $7 RETURNING *;",
+            [title, content, book_year, author, genre, on_loan, this.id]);
+            if (response.rows.length != 1) {
+                throw new Error("Not able to update Pokemon")
+              }
+              return new Pokemon(response.rows[0])
+            }
+    
+
     async destroy() {
         let response = await db.query("DELETE FROM post WHERE post_id = $1 RETURNING *;", [this.id]);
         return new Post(response.rows[0]);
