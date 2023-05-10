@@ -15,7 +15,7 @@ async function create (req, res) {
         const result = await Post.create(data);
         res.status(201).send(result);
     } catch (err) {
-        res.status(400).json({"error": err.message})
+        res.status(400).json({"error": "Unable to create a new book"})
     }
 };
 
@@ -25,7 +25,7 @@ async function show (req, res) {
         const post = await Post.getOneById(id);
         res.json(post);
     } catch (err) {
-        res.status(404).json({"error": err.message})
+        res.status(404).json({"error": "This book does not exist"})
     }
 };
 
@@ -40,6 +40,18 @@ async function destroy (req, res) {
     }
 };
 
+async function update(req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const data = req.body;
+        const post = await Post.getOneById(id);
+        const result = await post.update(data);
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(404).json({error:err.message});
+    }
+}
+
 module.exports = {
-    index, create, show, destroy
+    index, create, show, destroy, update
 }
