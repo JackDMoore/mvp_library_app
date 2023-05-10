@@ -18,23 +18,29 @@ describe("api server", () => {
   test("it responds to get / with status 200", (done) => {
     request(api).get("/").expect(200, done);
   });
-
+//
   test("responds to invalid method request with 405", (done) => {
     request(api)
       .post("/")
       .expect(405, done);
   });
 
-//not currently working
-  // test('responds to delete /posts/:id with status 204', (done) => {
-  //   request(api)
-  //     .delete('/posts/1')
-  //     .expect(204, done)
-  // })
+// not currently working/ need to write a test that tests when one is deleted /204.
+  test('responds to delete /posts/:id with status 404 if unknown id', (done) => {
+    request(api)
+      .delete("/posts/99")
+      .expect(404, done)
+  })
+
+  test('responds to delete /posts/:id with status 204', (done) => {
+    request(api)
+    .delete("/posts/3")
+    .expect(204, done)
+})
 
   test('responds to unknown book id with a 404', (done) => {
     request(api)
-    .get('/posts/66')
+    .get("/posts/66")
     .expect(404)
     .expect({error: "This book does not exist"}, done)
   })
