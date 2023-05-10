@@ -7,26 +7,32 @@ function createPostElement(data) {
 
   const header = document.createElement("h2");
   header.textContent = data["title"];
+  header.id="header"
   post.appendChild(header);
 
   const content = document.createElement("p");
   content.textContent = data["content"];
+  content.id = "content"
   post.appendChild(content);
 
   const year = document.createElement("p");
   year.innerHTML = `<strong>Book Year:</strong> ${data["year"]}`;
+  year.id = "year"
   post.appendChild(year);
 
   const author = document.createElement("p");
   author.innerHTML = `<strong>Author:</strong> ${data["author"]}`;
+  author.id = "author"
   post.appendChild(author);
 
   const genre = document.createElement("p");
   genre.innerHTML = `<strong>Genre:</strong> ${data["genre"]}`;
+  genre.id = "genre"
   post.appendChild(genre);
 
   const on_loan = document.createElement("p");
   on_loan.innerHTML = `<strong>Is Book available:</strong> ${data["on_loan"]}`;
+  on_loan.id = "on_loan" 
   post.appendChild(on_loan);
 
   return post;

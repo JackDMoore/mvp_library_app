@@ -6,23 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/book.ico">
     <link rel="stylesheet" href="./assets/default.css">
+    <link rel="stylesheet" href="./assets/board.css">
     <script src="./assets/board.js" defer></script>
-    <title>Florin Library</title>
+    <title>Florin Library Books</title>
 </head>
 <body>
-    <nav>
-        <button><a href="./login.html">Log out</a></button>
-    </nav>
     <header>
         <h1>Florin County Council Library</h1>
-        <em>Add, edit and delete books:</em>
+        <input id="search" type="text" placeholder="Search..">
+        <ul class="selection">
+        <button><a href="./login.html">Log out</a></button></ul>
     </header>
     <hr />
+    <em>Add, edit and delete books:</em>
     <main>
         <div class="container" id="posts">
 
         </div>
-        <button id="load-more-btn"><input type="submit" value="Load more"></button>
+        <button id="load-more-btn">Load More</button>
         <hr />
         <form id="post-form">
             <fieldset>
@@ -31,19 +32,19 @@
             </fieldset>
             <fieldset>
                 <label for="title">Author:</label>
-                <input type="text" id="author" name="author" required>
+                <input type="text" id="author1" name="author" required>
             </fieldset>
             <fieldset>
                 <label for="title">Release date:</label>
                 <input type="text" id="relase-date" name="relase-date" required>
             </fieldset>
             <fieldset>
-                <label for="title">Category</label>
+                <label for="title">Category:</label>
                 <input type="text" id="category" name="category" required>
             </fieldset>
             <fieldset>
                 <label for="title">About:</label>
-                <textarea id="content" name="content" required></textarea>
+                <textarea id="about" name="about" required></textarea>
             </fieldset>
             <fieldset>
                 <legend>Is the book on loan?</legend>
@@ -52,7 +53,7 @@
                 <input type="radio" id="on-loan-no" name="on_loan" value="false" checked>
                 <label for="on-loan-no">No</label>
               </fieldset>
-              <button><input type="submit" value="Add to Library"></button>
+              <input type="submit" value="Add to Library">
         </form>
     </main>
 </body>

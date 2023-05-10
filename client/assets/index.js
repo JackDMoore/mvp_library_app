@@ -8,18 +8,23 @@ function createPostElement (data) {
 
     const content = document.createElement("p");
     content.textContent = data["content"];
+    content.id = "content";
+    console.log(content.id)
     post.appendChild(content);
 
     const year = document.createElement("p");
     year.innerHTML = `<strong>Book Year:</strong> ${data["year"]}`;
+    year.id = "year"
     post.appendChild(year);
-    
+
     const author = document.createElement("p");
     author.innerHTML = `<strong>Author:</strong> ${data["author"]}`;
+    author.id = "author"
     post.appendChild(author);
 
     const genre = document.createElement("p");
     genre.innerHTML = `<strong>Genre:</strong> ${data["genre"]}`;
+    genre.id = "genre"
     post.appendChild(genre);
 
     return post;
