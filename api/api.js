@@ -18,6 +18,11 @@ api.get("/", (req, res) => {
     })
 })
 
+//This is an added layer of sercurity to reject requests that are not defined.
+api.post('/', (req, res) => {
+    res.status(405).send("Not allowed")
+})
+
 api.use("/posts", postRouter);
 api.use("/users", userRouter);
 
