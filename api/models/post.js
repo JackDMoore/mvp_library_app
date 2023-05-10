@@ -43,5 +43,15 @@ class Post {
         }
         return new Post(response.rows[0]);
     }
+
+    async update(data) {
+        const { title, content, book_year, author, genre, on_loan} = data;
+        await db.query(
+          "UPDATE post SET title=$1, content=$2, book_year=$3, author=$4, genre=$5, on_loan=$6 WHERE post_id=$7 RETURNING *;",
+          [title, content, parseInt(book_year), author, genre, on_loan, this.id]
+        );
+        const updatedPost = await Post.getOneById(this.id);
+        return updatedPost;
+      }
 }
 module.exports = Post;

@@ -34,12 +34,24 @@ async function destroy (req, res) {
         const id = parseInt(req.params.id);
         const post = await Post.getOneById(id);
         const result = await post.destroy();
-        res.status(204).end();
+        res.json(result).end();
     } catch (err) {
         res.status(404).json({"error": err.message})
     }
 };
 
+async function update(req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const data = req.body;
+        const post = await Post.getOneById(id);
+        const result = await post.update(data);
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(404).json({error:err.message});
+    }
+}
+
 module.exports = {
-    index, create, show, destroy
+    index, create, show, destroy, update
 }
