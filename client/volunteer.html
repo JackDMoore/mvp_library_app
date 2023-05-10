@@ -4,12 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/book.ico">
+    <link rel="stylesheet" href="./assets/volunteer.css">
     <title>Florin Library</title>
 </head>
 <body>
     <div class="container">
         <div style="text-align:center">
-          <h2>Volunteer With Us</h2>
-          <p>Swing by for a cup of coffee, or leave us a message to lend a helping hand:</p>
+          <h2>Volunteer Around Florin (Florinteer)</h2>
+          <p>Come and help out at the libary or leave us a message to lend a helping hand to others in the community:</p>
+        </div>
+        <div class="row">
+            <div class="column">
+            </div>
+        <div class="column">
+            <form action="./submitted.html">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+              </select>
+              <label for="subject">About you and how you could help?</label>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
 </body>
 </html>
