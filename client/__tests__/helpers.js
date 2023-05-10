@@ -3,6 +3,7 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
 const renderDOM = async (filename) => {
+
     const filePath = path.join(process.cwd(), filename);
     const dom = await JSDOM.fromFile(filePath, {
         runScripts: 'dangerously',
@@ -10,7 +11,7 @@ const renderDOM = async (filename) => {
     })
 
     return new Promise((resolve, _) => {
-        dom.window.document.addEventListner('DOMContentLoaded',() => {
+        dom.window.document.addEventListener('DOMContentLoaded',() => {
             resolve(dom)
         })
     });

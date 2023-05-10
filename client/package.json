@@ -8,5 +8,10 @@
     "dev": "live-server",
     "test": "jest --watchAll",
     "coverage": "jest --coverage"
+  },
+  "jest" : {
+    "testPathIgnorePatterns": [
+      "./__tests__/helpers.js"
+    ]
   }
 }
