@@ -39,7 +39,17 @@ async function destroy (req, res) {
         res.status(404).json({"error": err.message})
     }
 };
+//search function below
+async function search (req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const post = await Post.search(id);
+        res.json(post);
+    } catch (err) {
+        res.status(404).json({"error": err.message})
+    }
+};
 
 module.exports = {
-    index, create, show, destroy
+    index, create, show, destroy, search
 }
