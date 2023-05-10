@@ -25,7 +25,6 @@ describe("api server", () => {
       .expect(405, done);
   });
 
-// not currently working/ need to write a test that tests when one is deleted /204.
   test('responds to delete /posts/:id with status 404 if unknown id', (done) => {
     request(api)
       .delete("/posts/99")
@@ -45,20 +44,39 @@ describe("api server", () => {
     .expect({error: "This book does not exist"}, done)
   })
 
-  // test('responds to posts /posts with status 201', (done) => {
-  //   const testData = {
-  //     title: "The Shadow of The Wind",
-  //     content: "The Shadow of The Wind",
-  //     book_year: 2001,
-  //     author:"Carlos Ruiz Zafón",
-  //     genre: "Mystery",
-  //     on_loan: true
-  //   }
-  //   request(api)
-  //   .post('/posts')
-  //   .send(testData)
-  //   .set('Accept','application/json')
-  //   .expect(201)
-  //   .expect({testData}, done)
-  // })
+  test('responds to posts /posts with status 201', (done) => {
+    const testData = {
+      title: "The Shadow of The Wind",
+      content: "The Shadow of The Wind",
+      book_year: 2001,
+      author:"Carlos Ruiz Zafón",
+      genre: "Mystery",
+      on_loan: true
+    }
+    request(api)
+    .post('/posts')
+    .send(testData)
+    .set('Accept','application/json')
+    .expect(201)
+    .expect({testData}, done)
+  })
+
+  test('responds to patch /posts/:id with 200', (done) => {
+    const post = { title: 'The Shadow of the Wind', content: 'A city slowly heals from its war wounds, and Daniel, an antiquarian book dealers son who mourns the loss of his mother, finds solace in a mysterious book entitled The Shadow of the Wind', book_year: 2001, author: 'Carlors Ruiz Zafron', genre: 'Fiction', on_loan: false };
+    const updatedPost = { title: 'The Shadow of the Wind', content: 'A city slowly heals from its war wounds, and Daniel, an antiquarian book dealers son who mourns the loss of his mother, finds solace in a mysterious book entitled The Shadow of the Wind', book_year: 2001, author: 'Sean OBeirne', genre: 'Mystery', on_loan: true };
+    const expectedResponse = { 
+      post_id: expect.any(Number),
+      title: 'The Shadow of the Wind',
+      content: 'A city slowly heals from its war wounds, and Daniel, an antiquarian book dealers son who mourns the loss of his mother, finds solace in a mysterious book entitled The Shadow of the Wind',
+      book_year: 2001,
+      author: 'Sean OBeirne',
+      genre: 'Mystery',
+      on_loan: true
+    };
+    request(api)
+    .patch(`/posts/${post.post_id}`)
+    .send(updatedPost)
+    .expect(200)
+    .expect(expectedResponse, done);
+});
 });
