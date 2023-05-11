@@ -37,8 +37,10 @@ function createPostElement(data) {
 
   return post;
 }
+let posts = undefined
 
-async function loadPosts() {
+async function loadPosts() { 
+    console.log("hit")
   const options = {
     headers: {
       Authorization: localStorage.getItem("token"),
@@ -50,7 +52,7 @@ async function loadPosts() {
   );
 
   if (response.status == 200) {
-    const posts = await response.json();
+    posts = await response.json();
     const container = document.getElementById("posts");
     const start = (currentPage - 1) * postsPerPage;
     const end = start + postsPerPage;
@@ -83,17 +85,19 @@ function searchBook() {
 
 //search function below
 async function searchBar() {
-    const response = await fetch(
-        "https://mvp-library-app-backend1.onrender.com/posts",
-        options
-      ); 
-      if (response.status == 200) {
-        let input = document.getElementById("search").value
-        input=input.toLowerCase
-        let searchResult = response.filter(input) 
-      }
+    console.log(posts)
+    // const response = await fetch(
+    //     "https://mvp-library-app-backend1.onrender.com/posts",
+    //     options
+    //   ); 
+    //   if (response.status == 200) {
+    //     let input = document.getElementById("search").value
+    //     input=input.toLowerCase
+    //     let searchResult = response.filter(input) 
+    //   }
         
-      const searchItem = response.filter(searchBook) 
+    //   const searchItem = response.filter(searchBook) 
 }
 
+searchBar()
 
