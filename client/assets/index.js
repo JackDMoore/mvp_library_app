@@ -4,6 +4,7 @@ function createPostElement (data) {
 
     const header = document.createElement("h2");
     header.textContent = data["title"];
+    header.id="header"
     post.appendChild(header);
 
     const content = document.createElement("p");

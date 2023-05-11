@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS user_account;
 CREATE TABLE post (
     post_id INT GENERATED ALWAYS AS IDENTITY,
     title VARCHAR (100) NOT NULL,
-    content VARCHAR (500) NOT NULL,
+    content VARCHAR (500) NOT NULL CHECK (LENGTH(content) >= 70),
     book_year INT NOT NULL,
     author VARCHAR(250) NOT NULL,
     genre VARCHAR(100) NOT NULL,
