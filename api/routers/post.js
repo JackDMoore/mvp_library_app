@@ -9,6 +9,6 @@ postRouter.get("/", postController.index);
 postRouter.post("/", postController.create);
 postRouter.get("/:id", postController.show);
 postRouter.delete("/:id", postController.destroy);
-postRouter.get("/", postController.search); //for search function
+// postRouter.get("/search", postController.search); //for search function
 
 module.exports = postRouter;
