@@ -6,7 +6,7 @@ body{
     color: #000;
     padding: 10px;
     background-color: #FCEFF9;
-
+    background: linear-gradient(to top, #FCEFF9, #fffdd0);
 }
 
 h1{
