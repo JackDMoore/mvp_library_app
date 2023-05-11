@@ -74,15 +74,26 @@ document.getElementById("load-more-btn").addEventListener("click", () => {
   loadPosts();
 });
 
+//grabbing info from search
+
+function searchBook() {
+    let input = document.getElementById("search").value
+    input=input.toLowerCase
+} 
 
 //search function below
-async function searchBar {
+async function searchBar() {
     const response = await fetch(
         "https://mvp-library-app-backend1.onrender.com/posts",
         options
       ); 
-      if (response.status == 200)
-
+      if (response.status == 200) {
+        let input = document.getElementById("search").value
+        input=input.toLowerCase
+        let searchResult = response.filter(input) 
+      }
+        
+      const searchItem = response.filter(searchBook) 
 }
 
 
