@@ -8,6 +8,34 @@ header{
     background-color: #93C0A4;
 }
 
+#contact{
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+    width: 300px;
+}
 
+#email{
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+    width: 300px;
+}
 
+#phone{
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+    width: 300px;
+}
 
+#address{
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+    width: 300px;
+}
