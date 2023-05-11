@@ -5,38 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/book.ico">
+    <link rel="stylesheet" href="./assets/volunteer.css">
     <link rel="stylesheet" href="./assets/default.css">
-    <link rel="stylesheet" href="./assets/register.css">
-    <script src="./assets/register.js" defer></script>
-    <title>Florin Library Register</title>
+    <title>Florin Library Volunteer</title>
 </head>
 <body>
-    <header>
-        <h1>Florin County Council Library</h1>
-        <ul class="selection">
-            <input id="search" type="text" placeholder="Search..">
-            <button><a href="./index.html"style="text-decoration:none;">Home</a></button>
-            <button><a href="./volunteer.html"style="text-decoration:none;">Volunteer</a></button>
-            </ul>
-    </header>
-    <hr />
-    <em><strong>Bringing Florin Library to you.</strong></em>
-    <main>
-        <form id="register-form">
-            <h2>Sign Up</h2>
-            <fieldset>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
-            </fieldset>
-            <fieldset>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
-            </fieldset>
-            <input type="submit" value="Register">
-            <p>Already registered? <a href="./login.html">Log in here</a>.</p>
-        </form>
-        <hr />
-        <footer>
+    <div class="container">
+          <h2>Volunteer Around Florin (Florinteer)</h2>
+          <p>Come and help out at the libary or leave us a message to lend a helping hand to others in the community:</p>
+        <div class="column">
+            <form action="./submitted.html">
+              <label for="fname"><strong>First Name:</strong></label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+              <label for="lname"><strong>Last Name: </strong></label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+              </select>
+              <label for="subject"><strong>About you and how you could help? </strong></label>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+              <input type="submit" value="Submit">
+              <button><a href="./index.html" style="text-decoration:none;">Home</a></button>
+            </form>
+          </div>
+    </div>
+          <hr />
+          <footer>
             <ul class="us">
                 <p id="contact"><strong>Contact us: </strong></p>
                 <p id="email"><strong>Email: </strong>FlorinLibrary@gmail.com</p>
@@ -54,6 +46,5 @@
                 <p id="Sunday"><strong>Sunday - </strong>Closed</p>
             </ul>
             </footer>
-    </main>
 </body>
 </html>

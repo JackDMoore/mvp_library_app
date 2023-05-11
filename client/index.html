@@ -6,20 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/book.ico">
     <link rel="stylesheet" href="./assets/default.css">
+    <link rel="stylesheet" href="./assets/index.css">
     <script src="./assets/index.js" defer></script>
     <title>Florin Library</title>
 </head>
 <body>
     <header>
-        <h1>Florin County Council Library</h1>
-        <em>Bringing Florin Library to you.</em>
+        <h1>Florin County Council Library</h1> 
+        <ul class="selection">
+            <input id="search" type="text" placeholder="Search..">
+            <button><a href="./login.html"style="text-decoration:none;">Log In</a></button>
+            <button><a href="./register.html"style="text-decoration:none;">Sign up</a></button>
+            <button><a href="./volunteer.html"style="text-decoration:none;">Volunteer</a></button>
+        </ul>
     </header>
     <hr />
+    <em><strong>Bringing Florin Library to you.</strong></em>
     <main>
-        <ul class="selection">
-            <button><a href="./login.html">Login</a></button>
-            <button><a href="./register.html">Sign up</a></button>
-        </ul>
-    </main>
+        <div class="container" id="posts"> </div>
+        <hr />
+        </main>
+    <footer>
+    <ul class="us">
+        <p id="contact"><strong>Contact us: </strong></p>
+        <p id="email"><strong>Email: </strong>FlorinLibrary@gmail.com</p>
+        <p id="phone"><strong>Phone: </strong>0121 496 0792</p>
+        <p id="address"><strong>Address: </strong>123 Main St,Florin UK</p>
+    </ul>
+    <ul class="Open">
+        <p id="ti"><strong>Opening times:</strong></p>
+        <p id="Monday"><strong>Monday - </strong>09:00 to 18:00</p>
+        <p id="Tuesday"><strong>Tuesday - </strong>09:00 to 18:00</p>
+        <p id="Wednesday"><strong>Wednesday - </strong>09:00 to 18:00</p>
+        <p id="Thursday"><strong>Thursday - </strong>09:00 to 18:00</p>
+        <p id="Friday"><strong>Friday - </strong>09:00 to 18:00</p>
+        <p id="Saturday"><strong>Saturday - </strong>09:00 to 13:00</p>
+        <p id="Sunday"><strong>Sunday - </strong>Closed</p>
+    </ul>
+    </footer>
 </body>
 </html>

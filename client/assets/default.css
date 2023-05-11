@@ -1,23 +1,23 @@
 body{
     margin: 40px auto;
-    max-width: 650px;
-    line-height: 1.6;
+    max-width: 1300px;
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
-    color: #93C0A4;
-    padding: 0 10px;
+    color: #000;
+    padding: 10px;
     background-color: #FCEFF9;
-
+    background: linear-gradient(to top, #FCEFF9, #fffdd0);
 }
-h1,h2,h3 {
-    line-height: 1.2
+
+h1{
+    margin: 10px;
 }
 fieldset {
     border: none;
 }
-label {
-    width: 140px;
-    display: inline-block;
+
+em{
+    padding: 10px;
 }
 .container {
     display: flex;
@@ -27,14 +27,22 @@ label {
 button {
     font-size: 16px;
     height:40px;
-    width: 150px;
+    width: 80px;
     background-color: #D9D9D9;
     color: #000;
-    border-radius: 3px;
+    border-radius: 30px;
+    padding: 0.1rem;
+    margin: 5px;
 }
+
+button:hover {
+    background-color: #FCEFF9;
+  }
+
 p {
-    padding: 15px;
+    padding: 10px;
 }
+
 .text {
     width: 314px;
     height: 35px;
@@ -42,3 +50,114 @@ p {
     border: none;
     border-radius: 3px;
 }
+
+footer{
+    background-color: #93C0A4;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+
+}
+
+#post-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    border-radius: 10px;
+    text-align: center;
+    background-color: #93C0A4;
+     
+}
+
+
+#posts{    
+    outline: #FCEFF9 solid 5px;
+}
+.post{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    outline: #FCEFF9 solid 5px;
+    border-radius: 40px;
+}
+
+#header{
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+}
+
+#content{
+    order: 2;
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+}
+
+#year{ 
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+}
+
+#author{
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+}
+
+#genre{ 
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+}
+
+#on_loan{
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+}
+
+#search{
+    font-size: 25px;
+    height: 50px;
+    width: 400px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 30px;
+    padding: 0.1rem;
+    margin: 5px;
+}
+
+#login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #93C0A4;
+    max-width: 750px;
+    max-height: 750px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+#register-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #93C0A4;
+    max-width: 750px;
+    max-height: 750px;;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+

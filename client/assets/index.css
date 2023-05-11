@@ -1,0 +1,37 @@
+header{
+    display: flex;
+    background-color: #93C0A4;
+    border-radius: 10px;
+}
+
+#posts{
+    background-color: #93C0A4;
+}
+
+#contact{
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+    width: 300px;
+}
+
+#email{
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+    width: 300px;
+}
+
+#phone{
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+    width: 300px;
+}
+
+#address{
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px;
+    width: 300px;
+}

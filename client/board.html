@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/book.ico">
     <link rel="stylesheet" href="./assets/default.css">
+    <link rel="stylesheet" href="./assets/board.css">
     <script src="./assets/board.js" defer></script>
-    <title>Florin Library</title>
+    <title>Florin Library Books</title>
 </head>
 <body>
-    <nav>
-        <a href="./index.html">Log out</a>
-    </nav>
     <header>
         <h1>Florin County Council Library</h1>
-        <em>Add, edit and delete books:</em>
+        <ul class="selection">
+        <input id="search" type="text" placeholder="Search..">
+        <button><a href="./index.html"style="text-decoration:none;">Home</a></button>
+        <button><a href="./login.html"style="text-decoration:none;">Log out</a></button>
+        <button><a href="./volunteer.html"style="text-decoration:none;">Volunteer</a></button>
+        </ul>
     </header>
     <hr />
+    <em><strong>Add, edit and delete books:</strong></em>
     <main>
-        <div class="container" id="posts">
-
-        </div>
-        <hr />
         <form id="post-form">
             <fieldset>
                 <label for="title">Title:</label>
@@ -30,19 +30,19 @@
             </fieldset>
             <fieldset>
                 <label for="title">Author:</label>
-                <input type="text" id="author" name="author" required>
+                <input type="text" id="author1" name="author" required>
             </fieldset>
             <fieldset>
                 <label for="title">Release date:</label>
                 <input type="text" id="relase-date" name="relase-date" required>
             </fieldset>
             <fieldset>
-                <label for="title">Category</label>
+                <label for="title">Category:</label>
                 <input type="text" id="category" name="category" required>
             </fieldset>
             <fieldset>
-                <label for="title">About:</label>
-                <textarea id="content" name="content" required></textarea>
+                <label for="title">About (Minimum of 70 characters):</label>
+                <textarea id="about" name="about" required></textarea>
             </fieldset>
             <fieldset>
                 <legend>Is the book on loan?</legend>
@@ -51,8 +51,31 @@
                 <input type="radio" id="on-loan-no" name="on_loan" value="false" checked>
                 <label for="on-loan-no">No</label>
               </fieldset>
-            <input type="submit" value="Add to Library">
+              <input type="submit" value="Add to Library">
         </form>
+        <hr />
+        <div class="container" id="posts">
+        </div>
+        <button id="load-more-btn">Load More</button>
+        <hr />
+        <footer>
+            <ul class="us">
+                <p id="contact"><strong>Contact us: </strong></p>
+                <p id="email"><strong>Email: </strong>FlorinLibrary@gmail.com</p>
+                <p id="phone"><strong>Phone: </strong>0121 496 0792</p>
+                <p id="address"><strong>Address: </strong>123 Main St,Florin UK</p>
+            </ul>
+            <ul class="Open">
+                <p id="ti"><strong>Opening times:</strong></p>
+                <p id="Monday"><strong>Monday - </strong>09:00 to 18:00</p>
+                <p id="Tuesday"><strong>Tuesday - </strong>09:00 to 18:00</p>
+                <p id="Wednesday"><strong>Wednesday - </strong>09:00 to 18:00</p>
+                <p id="Thursday"><strong>Thursday - </strong>09:00 to 18:00</p>
+                <p id="Friday"><strong>Friday - </strong>09:00 to 18:00</p>
+                <p id="Saturday"><strong>Saturday - </strong>09:00 to 13:00</p>
+                <p id="Sunday"><strong>Sunday - </strong>Closed</p>
+            </ul>
+            </footer>
     </main>
 </body>
 </html>

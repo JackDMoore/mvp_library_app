@@ -1,0 +1,41 @@
+header{
+    display: flex;
+    background-color: #93C0A4;
+    border-radius: 10px;
+}
+
+#username{
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20px;
+}
+
+#password{
+    background-color:#FCEFF9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20px;
+}
+
+input[type="submit"] {
+    background-color:#D9D9D9;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+  }
+  input[type=submit]:hover {
+    background-color: #FCEFF9;
+  }
+  label[for="username"] {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  label[for="password"] {
+    font-size: 18px;
+    font-weight: bold;
+  }
