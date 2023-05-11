@@ -72,7 +72,8 @@ footer{
 
 
 #posts{    
-    outline: #FCEFF9 solid 5px;
+    outline: #93C0A4 solid 5px;
+    border-radius: 40px;
 }
 .post{
     display: flex;
@@ -80,6 +81,7 @@ footer{
     flex-wrap: wrap;    
     outline: #FCEFF9 solid 5px;
     border-radius: 40px;
+    margin: 10px;
 }
 
 #header{
