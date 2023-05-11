@@ -75,5 +75,14 @@ document.getElementById("load-more-btn").addEventListener("click", () => {
 });
 
 
+//search function below
+async function searchBar {
+    const response = await fetch(
+        "https://mvp-library-app-backend1.onrender.com/posts",
+        options
+      ); 
+      if (response.status == 200)
+
+}
 
 
