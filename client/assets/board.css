@@ -38,7 +38,9 @@ input[type="submit"] {
     font-family: 'Montserrat', sans-serif;
     color: #000;
   }
-
+  input[type=submit]:hover {
+    background-color: #FCEFF9;
+  }
   #contact{
     border-radius: 10px;
     padding: 5px;
@@ -66,3 +68,5 @@ input[type="submit"] {
     margin: 30px;
     width: 300px;
 }
+
+
