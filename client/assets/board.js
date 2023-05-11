@@ -4,6 +4,7 @@ let currentPage = 1;
 function createPostElement(book) {
   const post = document.createElement("div");
   post.className = "post";
+  post.id = `post-${book.id}`;
 
   const header = document.createElement("h2");
   header.textContent = book.title;
@@ -35,9 +36,9 @@ function createPostElement(book) {
   deleteButton.addEventListener("click", () => {
     const confirmation = confirm("Are you sure you want to delete this book?");
     if (confirmation) {
-      deletePost(book.id);
+      deletePost(book.id).then(() => location.reload());
     }
-  });
+  });  
   post.appendChild(deleteButton);
 
   return post;
@@ -121,9 +122,7 @@ async function deletePost(id) {
   } else {
     // Reload the page to reflect the changes
     location.reload();
-    loadPosts();
   }
-  
 }
 
 
