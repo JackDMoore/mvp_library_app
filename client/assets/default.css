@@ -120,6 +120,7 @@ p {
     background-color: #93C0A4;
     max-width: 750px;
     max-height: 750px;
+    padding: 300px;
 }
 
 #register-form{
@@ -130,4 +131,5 @@ p {
     background-color: #93C0A4;
     max-width: 750px;
     max-height: 750px;
+    padding: 300px;
 }
