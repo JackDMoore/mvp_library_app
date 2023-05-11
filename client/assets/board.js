@@ -61,6 +61,39 @@ async function loadPosts () {
 
 }
 
+//search function below
+const searchInput = document.querySelector('.input')
+searchInput.addEventListener("input") 
+    let value = e.target.value
+    if (response.status == 200) {
+        const posts = await response.json();
+        const container = document.getElementById(p);
+        posts.forEach(p => {
+            const elem = createPostElement(p);
+            container.appendChild(elen);
+        })
+    } else {
+
+    }
+
+// or should function be more like below
+async function searchResults(results) {
+    for (const bookName of results) {
+        const resultItem = document.createElement("li")
+        resultItem.classList.add("result-item")
+        const text = document.createTextNode(bookName.title)
+        resultItem.appendChild(text)
+        FileList.appedChild(resultItem)
+    }
+}
+
+//clear button below
+const clearButton = document.getElementById('clear')
+
+clearButton.addEventListener("click", () => {
+    //function needs to go here
+})
+
 loadPosts();
 
 
