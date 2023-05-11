@@ -40,12 +40,17 @@ input[type=text], select, textarea {
   .container {
     border-radius: 5px;
     padding: 10px;
+    text-align: center;
   }
 
 .container{
   background-color: #93C0A4;
 }
 
-.column{
-  text-align: center;
+footer{
+  background-color: #93C0A4;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+
 }
