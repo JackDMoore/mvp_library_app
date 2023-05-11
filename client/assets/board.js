@@ -35,6 +35,17 @@ function createPostElement(data) {
   on_loan.id = "on_loan" 
   post.appendChild(on_loan);
 
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.addEventListener("click", () => {
+    const confirmation = confirm("Are you sure you want to delete this post?");
+    if (confirmation) {
+      deletePost(data["id"]);
+      post.remove();
+    }
+  });
+  post.appendChild(deleteButton);
+
   return post;
 }
 
@@ -45,7 +56,7 @@ async function loadPosts() {
     },
   };
   const response = await fetch(
-    "https://mvp-library-app-backend1.onrender.com/posts",
+    "http://localhost:3000/posts",
     options
   );
 
@@ -68,6 +79,23 @@ async function loadPosts() {
 }
 
 loadPosts();
+
+async function deletePost(id) {
+  const options = {
+    method: "DELETE",
+    headers: {
+      Authorization: localStorage.getItem("token"),
+    },
+  };
+  const response = await fetch(
+    `http://localhost:3000/posts/${id}`,
+    options
+  );
+  if (response.status !== 204) {
+    console.error("Failed to delete post");
+  }
+}
+
 
 document.getElementById("load-more-btn").addEventListener("click", () => {
   currentPage++;
