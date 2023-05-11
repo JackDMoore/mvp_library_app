@@ -138,3 +138,7 @@ p {
     max-height: 750px;
     padding: 300px;
 }
+/* Below is class for new search function */
+.titleclass{ 
+    display: list-item;    
+   } 

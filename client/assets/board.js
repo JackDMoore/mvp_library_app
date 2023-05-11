@@ -8,6 +8,7 @@ function createPostElement(data) {
   const header = document.createElement("h2");
   header.textContent = data["title"];
   header.id="header"
+  header.className="titleclass" //added so search function has something to target
   post.appendChild(header);
 
   const content = document.createElement("p");
@@ -73,7 +74,20 @@ document.getElementById("load-more-btn").addEventListener("click", () => {
   currentPage++;
   loadPosts();
 });
-
-
+//search function below
+function search_book() {
+    let input = document.getElementById("search").value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName("titleclass");
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="initial";                 
+        }
+    }
+}
 
 
