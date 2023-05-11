@@ -1,5 +1,8 @@
 const request = require("supertest");
 const app = require("../api");
+// const postController = require('../controllers/post');
+
+// jest.setTimeout(20000);
 
 describe("api server", () => {
   let api;
@@ -18,7 +21,7 @@ describe("api server", () => {
   test("it responds to get / with status 200", (done) => {
     request(api).get("/").expect(200, done);
   });
-//
+
   test("responds to invalid method request with 405", (done) => {
     request(api)
       .post("/")
@@ -30,7 +33,7 @@ describe("api server", () => {
       .delete("/posts/99")
       .expect(404, done)
   })
-
+  
   test('responds to delete /posts/:id with status 204', (done) => {
     request(api)
     .delete("/posts/3")
@@ -79,4 +82,44 @@ describe("api server", () => {
     .expect(200)
     .expect(expectedResponse, done);
 });
+
+  // test("responds to delete /posts/:id with status 404 if unknown id", (done) => { 
+
+  //   const fakeId = "99";
+  //   const mockDeletePost = jest.fn(() => Promise.resolve(false)); // mock the deletePost function to return false
+  //   jest.mock("../controllers/post", () => ({
+  //     post: () => ({
+  //       deletePost: mockDeletePost,
+  //     }),
+  //   })); // mock the post controller module
+
+  //   request(api)
+  //     .delete(`/posts/${fakeId}`) // make the request
+  //     .expect(404) // expect a 404
+  //     .end((err) => {
+  //       if (err) return done(err);
+  //       expect(mockDeletePost).toHaveBeenCalledWith(fakeId); // expect the mock to have been called with the fake id
+  //       done();
+  //     });
+  // });
+
+
+    // test("responds to delete /posts/:id with status 204", (done) => {
+    //   const fakeId = "3";
+    //   const mockDeletePost = jest.fn(() => Promise.resolve(true)); // mock the deletePost function to return true
+    //   jest.mock("../controllers/post", () => ({
+    //     post: () => ({
+    //       deletePost: mockDeletePost,
+    //     }),
+    //   })); // mock the post controller module
+
+    //   request(api)
+    //     .delete(`/posts/${fakeId}`) // make the request
+    //     .expect(204) // expect a 204
+    //     .end((err) => {
+    //       if (err) return done(err);
+    //       expect(mockDeletePost).toHaveBeenCalledWith(fakeId); // expect the mock to have been called with the fake id
+    //       done();
+    //     });
+    // });
 });
