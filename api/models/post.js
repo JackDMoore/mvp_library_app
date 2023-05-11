@@ -17,8 +17,12 @@ class Post {
         this.genre = genre;
         this.on_loan = on_loan;
     }
-    static async getAll() {
-        const response = await db.query("SELECT * FROM post");
+    static async getAll(query) {
+        let searchString = ""
+        if (query !== null && "search" in query) {
+            searchString = query.search
+        }
+        const response = await db.query("SELECT * FROM post WHERE LOWER(title) LIKE ‘%’ || $1 || ‘%’",[searchString]);
         return response.rows.map(p => new Post(p));
     }
     static async getOneById(id) {
@@ -53,5 +57,10 @@ class Post {
         const updatedPost = await Post.getOneById(this.id);
         return updatedPost;
       }
+
+    static async search(search) { //change id??
+        const response = await db.query("SELECT * FROM post WHERE LOWER(title) LIKE ‘%’ || $1 || ‘%’", [search]); //what to put here??
+        return response.rows.map(p => new Post(p));
+    }
 }
 module.exports = Post;

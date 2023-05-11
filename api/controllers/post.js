@@ -2,7 +2,7 @@ const Post = require('../models/post');
 
 async function index (req, res) {
     try {
-        const posts = await Post.getAll();
+        const posts = await Post.getAll(req.query);  //req.query added here
         res.json(posts);
     } catch (err) {
         res.status(500).json({"error": err.message})
@@ -53,5 +53,5 @@ async function update(req, res) {
 }
 
 module.exports = {
-    index, create, show, destroy, update
+    index, create, show, destroy, update,
 }

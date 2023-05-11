@@ -38,14 +38,14 @@ function createPostElement(data) {
   return post;
 }
 
-async function loadPosts() {
+async function loadPosts(search = "") {
   const options = {
     headers: {
       Authorization: localStorage.getItem("token"),
     },
   };
   const response = await fetch(
-    "https://mvp-library-app-backend1.onrender.com/posts",
+    "https://mvp-library-app-backend1.onrender.com/posts?search=" + search,
     options
   );
 
@@ -74,6 +74,7 @@ document.getElementById("load-more-btn").addEventListener("click", () => {
   loadPosts();
 });
 
-
-
-
+document.getElementById("search").addEventListener("keypress", () => {
+  let value = e.target.value
+  loadPosts(value)
+})
