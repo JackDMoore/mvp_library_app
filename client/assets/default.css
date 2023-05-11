@@ -46,6 +46,8 @@ footer{
     background-color: #93C0A4;
     border-radius: 10px;
     padding: 10px;
+    display: flex;
+    
 }
 
 #post-form{
@@ -146,13 +148,4 @@ footer{
     padding: 300px;
 }
 
-.back-to-top-link{
-    font-size: 16px;
-    height:40px;
-    width: 80px;
-    background-color: #D9D9D9;
-    color: #000;
-    border-radius: 30px;
-    padding: 0.1rem;
-    margin: 5px;
-}
+
