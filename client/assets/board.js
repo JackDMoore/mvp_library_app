@@ -1,53 +1,48 @@
 const postsPerPage = 3;
 let currentPage = 1;
 
-function createPostElement(data) {
+function createPostElement(book) {
   const post = document.createElement("div");
   post.className = "post";
 
   const header = document.createElement("h2");
-  header.textContent = data["title"];
+  header.textContent = book.title;
   header.id="header"
   post.appendChild(header);
 
-  const content = document.createElement("p");
-  content.textContent = data["content"];
-  content.id = "content"
-  post.appendChild(content);
-
-  const year = document.createElement("p");
-  year.innerHTML = `<strong>Book Year:</strong> ${data["year"]}`;
-  year.id = "year"
-  post.appendChild(year);
-
   const author = document.createElement("p");
-  author.innerHTML = `<strong>Author:</strong> ${data["author"]}`;
+  author.innerHTML = `<strong>Author:</strong> ${book.author}`;
   author.id = "author"
   post.appendChild(author);
 
+  const year = document.createElement("p");
+  year.innerHTML = `<strong>Year:</strong> ${book.year}`;
+  year.id = "year"
+  post.appendChild(year);
+
   const genre = document.createElement("p");
-  genre.innerHTML = `<strong>Genre:</strong> ${data["genre"]}`;
+  genre.innerHTML = `<strong>Genre:</strong> ${book.genre}`;
   genre.id = "genre"
   post.appendChild(genre);
 
-  const on_loan = document.createElement("p");
-  on_loan.innerHTML = `<strong>Is Book available:</strong> ${data["on_loan"]}`;
-  on_loan.id = "on_loan" 
-  post.appendChild(on_loan);
+  const onLoan = document.createElement("p");
+  onLoan.innerHTML = `<strong>Available:</strong> ${book.onLoan ? "Yes" : "No"}`;
+  onLoan.id = "on_loan" 
+  post.appendChild(onLoan);
 
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
   deleteButton.addEventListener("click", () => {
-    const confirmation = confirm("Are you sure you want to delete this post?");
+    const confirmation = confirm("Are you sure you want to delete this book?");
     if (confirmation) {
-      deletePost(data["id"]);
-      post.remove();
+      deletePost(book.id);
     }
   });
   post.appendChild(deleteButton);
 
   return post;
 }
+
 
 async function loadPosts() {
   const options = {
@@ -80,6 +75,36 @@ async function loadPosts() {
 
 loadPosts();
 
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const formData = new FormData(form);
+  const data = {
+    title: formData.get("title"),
+    author: formData.get("author"),
+    book_year: formData.get("relase-date"),
+    genre: formData.get("category"),
+    content: formData.get("about"),
+    on_loan: formData.get("on_loan") === "true",
+  };
+
+  fetch("http://localhost:3000/posts", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" },
+  })
+    .then(response => response.json())
+    .then(newPost => {
+      const postElement = createPostElement(newPost);
+      const container = document.getElementById("posts");
+      container.insertBefore(postElement, container.firstChild);
+    })
+    .catch(error => console.log(error));
+}
+
+document.getElementById("post-form").addEventListener("submit", handleFormSubmit);
+
 async function deletePost(id) {
   const options = {
     method: "DELETE",
@@ -93,8 +118,14 @@ async function deletePost(id) {
   );
   if (response.status !== 204) {
     console.error("Failed to delete post");
+  } else {
+    // Reload the page to reflect the changes
+    location.reload();
+    loadPosts();
   }
+  
 }
+
 
 
 document.getElementById("load-more-btn").addEventListener("click", () => {
