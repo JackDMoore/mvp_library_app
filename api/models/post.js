@@ -49,14 +49,14 @@ class Post {
         }
         return new Post(response.rows[0]);
     }
-    // search function below
-    // static async search(id) { //change id??
-    //     const response = await db.query("SELECT * FROM post WHERE title LIKE ‘%’ || $1 || ‘%’", [id]); //what to put here??
-    //     if (response.rows.length != 1) {
-    //         throw new Error("Unable to locate book.")
-    //     }
-    //     return new Post(response.rows[0]);
-    // }
+    
+    static async search(id) { //change id??
+        const response = await db.query("SELECT * FROM post WHERE title LIKE ‘%’ || $1 || ‘%’", [id]); //what to put here??
+        if (response.rows.length != 1) {
+            throw new Error("Unable to locate book.")
+        }
+        return new Post(response.rows[0]);
+    }
 
 }
 
