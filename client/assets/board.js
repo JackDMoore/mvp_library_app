@@ -11,6 +11,11 @@ function createPostElement(book) {
   header.id="header"
   post.appendChild(header);
 
+  const content = document.createElement("p");
+  content.textContent = data["content"];
+  content.id = "content";
+  post.appendChild(content);
+
   const author = document.createElement("p");
   author.innerHTML = `<strong>Author:</strong> ${book.author}`;
   author.id = "author"
