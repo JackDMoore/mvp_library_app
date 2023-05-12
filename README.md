@@ -13,6 +13,8 @@ Library app that is allowing a new librarian to register and login to the app se
 7. Run `npm run dev` to start the server.
 8. In a web browser go to this [link](http://localhost:3000/) to view the working server.
 
+## Preview
+![Preivew](/Screenshot.png?raw=true "Optional Title")
 ## Technologies
 JavaScript, HTML, CSS, Node, Git, Github, Express API, CORS, SQL, ElephantSQL, Render
 
@@ -33,8 +35,7 @@ JavaScript, HTML, CSS, Node, Git, Github, Express API, CORS, SQL, ElephantSQL, R
 ## Bugs
 - Search Bar function
 
-## Future Features
-- Business Analyst  
+## Future Features 
 - Bootstrap to help with design and features  
 - User can rate books and write comments/ reviews  
 - Local information and events happening in the community page  
