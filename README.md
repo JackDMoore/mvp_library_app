@@ -27,7 +27,7 @@ JavaScript, HTML, CSS, Node, Git, Github, Express API, CORS, SQL, ElephantSQL, R
 - Deployment: The frontend has been deployed using Render.  
 ### Back End: 
 - Database: The website has a database that uses SQL to hae 3 tables for books, user_account and token so that the main database and the one for security are being used.  
-- Server: The server contains all the important code for the functionality of the frontend like get, post, patch, destroy methods.   
+- Server: The server contains all the important code for the functionality of the frontend like get, post, destroy methods.   
 - API: The website has an API that connects the front-end with the back-end so that they can communicate with each other.  
 - Authentication and Authorization: The website has a register and login page where you have to create a username and password to be able to add/edit/delete books.  
 - Deployment: The backend has been deployed using Render.  
