@@ -130,13 +130,7 @@ async function deletePost(id) {
   }
 }
 
-
-
 document.getElementById("load-more-btn").addEventListener("click", () => {
   currentPage++;
   loadPosts();
 });
-
-
-
-
