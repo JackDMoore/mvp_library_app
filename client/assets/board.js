@@ -8,33 +8,33 @@ function createPostElement(book) {
 
   const header = document.createElement("h2");
   header.textContent = book.title;
-  header.id="header"
+  header.id = "header";
   post.appendChild(header);
 
   const content = document.createElement("p");
-  content.textContent = data["content"];
+  content.textContent = book.content;
   content.id = "content";
-  console.log(content.id)
+  console.log(content.id);
   post.appendChild(content);
 
   const author = document.createElement("p");
   author.innerHTML = `<strong>Author:</strong> ${book.author}`;
-  author.id = "author"
+  author.id = "author";
   post.appendChild(author);
 
   const year = document.createElement("p");
   year.innerHTML = `<strong>Year:</strong> ${book.year}`;
-  year.id = "year"
+  year.id = "year";
   post.appendChild(year);
 
   const genre = document.createElement("p");
   genre.innerHTML = `<strong>Genre:</strong> ${book.genre}`;
-  genre.id = "genre"
+  genre.id = "genre";
   post.appendChild(genre);
 
   const onLoan = document.createElement("p");
   onLoan.innerHTML = `<strong>Available:</strong> ${book.onLoan ? "Yes" : "No"}`;
-  onLoan.id = "on_loan" 
+  onLoan.id = "on_loan"; 
   post.appendChild(onLoan);
 
   const deleteButton = document.createElement("button");
@@ -58,7 +58,7 @@ async function loadPosts() {
     },
   };
   const response = await fetch(
-    "https://mvp-library-app-backend1.onrender.com/posts",
+    "http://localhost:3000/posts",
     options
   );
 
@@ -96,7 +96,7 @@ function handleFormSubmit(event) {
     on_loan: formData.get("on_loan") === "true",
   };
 
-  fetch("https://mvp-library-app-backend1.onrender.com/posts", {
+  fetch("http://localhost:3000/posts", {
     method: "POST",
     body: JSON.stringify(data),
     headers: { "Content-Type": "application/json" },
@@ -120,7 +120,7 @@ async function deletePost(id) {
     },
   };
   const response = await fetch(
-    `https://mvp-library-app-backend1.onrender.com/posts/${id}`,
+    `http://localhost:3000/posts/${id}`,
     options
   );
   if (response.status !== 204) {

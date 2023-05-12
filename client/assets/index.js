@@ -39,7 +39,7 @@ async function loadPosts () {
             'Authorization': localStorage.getItem("token")
         }
     }
-    const response = await fetch("https://mvp-library-app-backend1.onrender.com/posts", options);
+    const response = await fetch("http://localhost:3000/posts", options);
 
     if (response.status == 200) {
         const posts = await response.json();
