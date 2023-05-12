@@ -57,10 +57,5 @@ class Post {
         const updatedPost = await Post.getOneById(this.id);
         return updatedPost;
       }
-
-    static async search(search) { //change id??
-        const response = await db.query("SELECT * FROM post WHERE LOWER(title) LIKE ‘%’ || $1 || ‘%’", [search]); //what to put here??
-        return response.rows.map(p => new Post(p));
-    }
 }
 module.exports = Post;
