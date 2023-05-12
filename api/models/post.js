@@ -1,4 +1,5 @@
 const db = require('../database/connect');
+
 class Post {
     constructor({
         post_id,

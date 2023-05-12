@@ -33,9 +33,12 @@ async function destroy (req, res) {
     try {
         const id = parseInt(req.params.id);
         const post = await Post.getOneById(id);
+        console.log(post);
         const result = await post.destroy();
-        res.json(result).end();
+        console.log("Hit")
+        res.status(204).json(result);
     } catch (err) {
+        console.log("TEST",err);
         res.status(404).json({"error": err.message})
     }
 };

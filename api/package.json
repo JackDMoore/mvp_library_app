@@ -13,7 +13,7 @@
     "uuid": "^9.0.0"
   },
   "scripts": {
-    "test": "jest --watchALL",
+    "test": "jest --watchAll",
     "dev": "nodemon -L index.js",
     "start": "node index.js",
     "setup-db": "node ./database/setup.js",
