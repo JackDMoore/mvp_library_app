@@ -14,6 +14,7 @@ function createPostElement(book) {
   const content = document.createElement("p");
   content.textContent = data["content"];
   content.id = "content";
+  console.log(content.id)
   post.appendChild(content);
 
   const author = document.createElement("p");
@@ -129,6 +130,8 @@ async function deletePost(id) {
     location.reload();
   }
 }
+
+
 
 document.getElementById("load-more-btn").addEventListener("click", () => {
   currentPage++;
