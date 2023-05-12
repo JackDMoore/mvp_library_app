@@ -30,7 +30,7 @@ class Post {
     }
     static async create(data) {
         const { title, content, book_year, author, genre, on_loan=false} = data;
-        let response = await db.query("INSERT INTO post (title, content,book_year,author,genre,on_loan) VALUES ($1, $2,$3,$4,$5,$6) RETURNING post_id;",
+        let response = await db.query("INSERT INTO post (title, content,book_year,author,genre,on_loan) VALUES ($1, $2,$3,$4,$5,$6) RETURNING *;",
             [title, content, book_year, author, genre, on_loan]);
         const newId = response.rows[0].post_id;
         const newPost = await Post.getOneById(newId);
