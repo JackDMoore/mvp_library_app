@@ -6,10 +6,10 @@
   },
   "scripts": {
     "dev": "live-server",
-    "test": "jest --watchAll",
+    "test": "jest --watchALL",
     "coverage": "jest --coverage"
   },
-  "jest" : {
+  "jest": {
     "testPathIgnorePatterns": [
       "./__tests__/helpers.js"
     ]

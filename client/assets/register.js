@@ -15,7 +15,10 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         })
     }
 
-    const response = await fetch("https://mvp-library-app-backend1.onrender.com/users/register", options);
+    // const response = await fetch("https://mvp-library-app-backend1.onrender.com/users/register", options);
+    
+    //https was changed to http and stores data in ElepahntSQL
+    const response = await fetch("http://localhost:3000/users/register", options);
     const data = await response.json();
 
     if (response.status == 201) {
