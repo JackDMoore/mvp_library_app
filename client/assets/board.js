@@ -52,7 +52,7 @@ async function loadPosts() {
     },
   };
   const response = await fetch(
-    "http://localhost:3000/posts",
+    "https://mvp-library-app-backend1.onrender.com/posts",
     options
   );
 
@@ -90,7 +90,7 @@ function handleFormSubmit(event) {
     on_loan: formData.get("on_loan") === "true",
   };
 
-  fetch("http://localhost:3000/posts", {
+  fetch("https://mvp-library-app-backend1.onrender.com/posts", {
     method: "POST",
     body: JSON.stringify(data),
     headers: { "Content-Type": "application/json" },
@@ -114,7 +114,7 @@ async function deletePost(id) {
     },
   };
   const response = await fetch(
-    `http://localhost:3000/posts/${id}`,
+    `https://mvp-library-app-backend1.onrender.com/posts/${id}`,
     options
   );
   if (response.status !== 204) {
